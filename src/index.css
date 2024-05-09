@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@layer utilities {
+
+  /* Estilo da barra de rolagem para Chrome, Safari e Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    /* Largura da barra de rolagem */
+  }
+
+  /* Estilo da barra de rolagem para Firefox */
+  .no-scrollbar {
+    scrollbar-width: thin;
+    /* Largura da barra de rolagem */
+  }
+
+}
