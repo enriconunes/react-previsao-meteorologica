@@ -139,7 +139,7 @@ export default function Home(){
                         </div>
 
                         <div className='w-40 '>
-                            <img className='w-full hover:scale-110 hover:rotate-3 hover:duration-150' src={response?.current.condition.icon} alt="" />
+                            <img className='w-full hover:scale-110 hover:rotate-3 hover:duration-150 animate-pulse-slow ' src={response?.current.condition.icon} alt="" />
                         </div>
                     </div>
 
