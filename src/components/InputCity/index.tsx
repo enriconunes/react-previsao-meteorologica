@@ -33,8 +33,10 @@ export default function InputCity({handleSearch, lang}: inputProps) {
   };
 
   return (
+
     <form className="relative rounded-sm shadow-sm w-full"
     onSubmit={handleSubmit}>
+
       <input
         value={inputValue}
         onChange={(e:any) => {setInputValue(e.target.value)}}
@@ -44,12 +46,15 @@ export default function InputCity({handleSearch, lang}: inputProps) {
         className="block w-full rounded-sm border-0 py-2 pr-20 text-white ring-1 ring-inset ring-gray-300 placeholder:text-white focus:placeholder:font-medium focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6 bg-white bg-opacity-40"
         placeholder={place}
       />
+      
       <div className="absolute inset-y-0 right-0 flex items-center px-3 text-white">
         <button
         type="submit">
               <IoIosSearch size={24}/>
         </button>
       </div>
+
     </form>
+
   )
 }

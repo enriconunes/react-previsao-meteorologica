@@ -10,6 +10,7 @@ interface headerProps{
 
 export default function Header({handleChangeLang, lang}: headerProps){
 
+    // hidden controller
     const [menuView, setMenuView] = useState(false)
 
     return(
@@ -37,7 +38,7 @@ export default function Header({handleChangeLang, lang}: headerProps){
                                 <button
                                 className={`h-5 w-8 ${lang === 'pt' ? "border border-gray-300" : "brightness-50"}`}
                                 onClick={() => handleChangeLang('pt')}>
-                                    <img className="h-full w-full" src="./assets/br.png" alt="" />
+                                    <img className="h-full w-full" src="./assets/pt.jpg" alt="" />
                                 </button>
 
                                 <button
@@ -51,7 +52,7 @@ export default function Header({handleChangeLang, lang}: headerProps){
                     </li>
                 </ul>
 
-                {/* out of menu */}
+                {/* outside the menu area */}
                 <div
                 className="h-full w-full"
                 onClick={() => setMenuView(!menuView)}>

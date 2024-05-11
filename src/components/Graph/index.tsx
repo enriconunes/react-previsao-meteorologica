@@ -12,6 +12,8 @@ import {
 import { Line } from 'react-chartjs-2';
 
 import { useState, useEffect } from 'react';
+
+// type Hour
 import { Hour } from '../../utils/types/response';
 
 ChartJS.register(
@@ -25,13 +27,13 @@ ChartJS.register(
   Legend
 );
 
-interface VariationProps {
+interface graphProps {
   variation: Hour[];
   lang: string;
   unit: string;
 }
 
-export default function Graph({ variation, lang, unit }: VariationProps) {
+export default function Graph({ variation, lang, unit }: graphProps) {
 
   const [labels, setLabels] = useState<any>([]);
   const [tempValues, setTempValues] = useState<any>([]);
@@ -43,8 +45,9 @@ export default function Graph({ variation, lang, unit }: VariationProps) {
     let hours = [];
     let temps = [];
 
+    // check if variation !== undefined
+    // 'variation' contains hours and respective temperature
     if (variation) {
-
       for (let cnt = 1; cnt < variation.length; cnt += 2) {
         hours.push(variation[cnt].time.slice(11, 16));
 
@@ -62,8 +65,9 @@ export default function Graph({ variation, lang, unit }: VariationProps) {
   }, [variation, unit]);
 
   useEffect(() => {
-    // Atualiza os dados do gráfico sempre que labels ou tempValues mudarem
+    
     updateChartData();
+
   }, [labels, tempValues]);
 
   useEffect(() => {
@@ -83,6 +87,7 @@ export default function Graph({ variation, lang, unit }: VariationProps) {
   }, [unit])
 
   const updateChartData = () => {
+
     const newData = {
       labels: labels,
       datasets: [
@@ -134,7 +139,7 @@ export default function Graph({ variation, lang, unit }: VariationProps) {
     },
   };
 
-  // Garante que chartData seja atualizado antes de retornar o gráfico
+  // ensures chartData is updated before returning the chart
   return(
     chartData.labels.length > 0 ?
       <Line className='bg-cyan-600 bg-opacity-40 shadow-md rounded-sm py-3 md:px-3 md:max-h-56 mt-5' options={options} data={chartData} />

@@ -18,16 +18,14 @@ code {
 
 @layer utilities {
 
-  /* Estilo da barra de rolagem para Chrome, Safari e Opera */
+  /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     width: 8px;
-    /* Largura da barra de rolagem */
   }
 
-  /* Estilo da barra de rolagem para Firefox */
+  /* Firefox */
   .no-scrollbar {
     scrollbar-width: thin;
-    /* Largura da barra de rolagem */
   }
 
 }
